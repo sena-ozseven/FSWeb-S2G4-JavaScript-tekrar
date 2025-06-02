@@ -94,9 +94,6 @@ console.log(CemberinAlani(15, pi));
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 console.log(`Sayı adeti: ${sayilar.length}`);
 
-let 
-  tekraredensayilar;
-
 // 3a çözümü
 
 let enkucuk = sayilar[0];
@@ -143,9 +140,21 @@ const siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a-b);
 console.log(`Sıralı Sayılar: ${siralisayilar}`);
 
 // 3f çözümü
+let tekraredensayilar = {};
 
-/* kodlar buraya */
-
+for (let i = 0; i <sayilar.length; i++) {
+  let sayi = sayilar[i];
+  if (tekraredensayilar[sayi]) {
+    tekraredensayilar[sayi] = tekraredensayilar[sayi] + 1;
+  } else {
+    tekraredensayilar[sayi] = 1;
+  }
+}
+for (let sayi in tekraredensayilar) {
+  if (tekraredensayilar[sayi] > 1) {
+    console.log(sayi + " sayısı " + tekraredensayilar[sayi] + " kere tekrar edilmiştir.");
+  }
+} 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
